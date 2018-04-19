@@ -1,0 +1,309 @@
+<!DOCTYPE html> 
+<html>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+<head>
+    
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script> 
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    
+<script src="http://code.highcharts.com/maps/highmaps.js"></script>
+
+<script type="text/javascript" src="script.js"></script>
+    
+      
+<style>
+#container {
+	height: 700px; 
+	width: 100%; 
+	margin: 0 auto; 
+    
+}
+.loading {
+	margin-top: 10em;
+	text-align: center;
+	color: gray;
+}
+    
+    /*css for navigation bar*/
+    
+    
+    
+    .sidenav {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: #111;
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 60px;
+}
+
+.sidenav a {
+    padding: 8px 8px 8px 8px;
+    text-decoration: none;
+    font-size: 15px;
+    color: #818181;
+    display: block;
+    transition: 0.3s;
+}
+
+.sidenav a:hover {
+    color: green;
+}
+
+.sidenav .closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+}
+
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
+}
+    
+    
+    /*Manish, this is css code for scrach accordion*/
+    
+    
+    .accordion {
+    background-color: #eee;
+    color: #444;
+    cursor: pointer;
+    padding: 18px;
+    width: 100%;
+    border: none;
+    text-align: left;
+    outline: none;
+    font-size: 15px;
+    transition: 0.4s;
+}
+
+.active, .accordion:hover {
+    background-color: #ccc; 
+}
+
+.panel {
+    padding: 0 0px;
+    display: none;
+    background-color: white;
+    overflow: hidden;
+}
+    
+    
+    
+
+   
+</style>
+
+
+    
+    
+    
+</head>
+<body>
+<!--navigation bar starts here-->
+<div id="mySidenav" class="sidenav">
+  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+    
+   
+    <button id = "button-A-D" class="accordion">A-D</button>
+<div id = "div-a-d" class="panel">
+     <ul id="companies-list-A-D">
+  <li data-target="46"><a href="#">AFLAC</a></li>
+<li data-target="55"><a href="#">Alexis Ducorbier State Farm Insurance Agency</a></li>
+<li data-target="41"><a href="#">ArcBest</a></li>
+<li data-target="42"><a href="#">Bankers Life</a></li>
+<li data-target="56"><a href="#">Becker Professional Education</a></li>
+<li data-target="17"><a href="#">Brooke Companies</a></li>
+<li data-target="28"><a href="#">Carr Riggs & Ingram</a></li>
+<li data-target="57"><a href="#">Chick-fil-A Denham Springs</a></li>
+<li data-target="31"><a href="#">DXC Technology</a></li>
+
+    </ul>
+</div>
+    
+    
+    <button id = "button-E-F" class="accordion">E-F</button>
+<div id = "div-e-f" class="panel">
+     <ul id="companies-list-E-F">
+  
+<li data-target="39"><a href="#">Edward Jones</a></li>
+<li data-target="54"><a href="#">Entergy</a></li>
+<li data-target="29"><a href="#">Enterprise Holdings (Enterprise Rent-A-Car)</a></li>
+<li data-target="34"><a href="#">Ericksen Krentel</a></li>
+<li data-target="49"><a href="#">Express Employment Professionals</a></li>
+<li data-target="51"><a href="#">Fastenal Company</a></li>
+<li data-target="22"><a href="#">Faulk & Winkler, LLC</a></li>
+<li data-target="48"><a href="#">Ferguson Enterprises</a></li>
+<li data-target="44"><a href="#">Fifth District Savings Bank</a></li>
+<li data-target="15"><a href="#">Foresters Financial</a></li>
+    </ul>
+</div>
+    
+    <!--another one for letter head-->
+    
+       <button id = "button-G-L" class="accordion">G-L</button>
+<div id ="div-g-l" class="panel">
+     <ul id="companies-list-G-L">
+  
+<li data-target="33"><a href="#">GNO, Inc.</a></li>
+<li data-target="23"><a href="#">Hannis T. Bourgeois, LLP</a></li>
+<li data-target="38"><a href="#">IBM</a></li>
+<li data-target="52"><a href="#">La Farm Bureau Ins Co.</a></li>
+<li data-target="40"><a href="#">Latter & Blum Classic Homes & Properties</a></li>
+<li data-target="43"><a href="#">Louisiana Cat</a></li>
+<li data-target="19"><a href="#">Louisiana Legislative Auditor's office</a></li>
+    </ul>
+</div>
+    
+     <!--another one for letter head-->
+    
+       <button id = "button-M-P"class="accordion">M-P</button>
+<div id = "div-m-p"class="panel">
+     <ul id="companies-list-M-P">
+    
+    <li data-target="25"><a href="#">MassMutual Louisiana</a></li>
+<li data-target="53"><a href="#">Modern Woodmen of America</a></li>
+<li data-target="32"><a href="#">Motion Industries</a></li>
+<li data-target="50"><a href="#">Northwestern Mutual</a></li>
+<li data-target="21"><a href="#">POOLCORP</a></li>
+<li data-target="30"><a href="#">Postlethwaite & Netterville</a></li>
+  
+         </ul>
+</div>
+    
+     
+    
+    <!--another one for letter head-->
+    
+       <button id = "button-R-W"class="accordion">R-W</button>
+<div id = "div-r-w"class="panel">
+     <ul id="companies-list-R-W">
+    
+   <li data-target="18"><a href="#">Republic Finance, LLC</a></li>
+<li data-target="45"><a href="#">Republic National Distributing Company</a></li>
+<li data-target="35"><a href="#">Sanderson Farms</a></li>
+<li data-target="20"><a href="#">Sherwin-Williams</a></li>
+<li data-target="16"><a href="#">Smittys Supply, Inc</a></li>
+<li data-target="24"><a href="#">The Martin-Brower Company</a></li>
+<li data-target="37"><a href="#">Tower Loan</a></li>
+<li data-target="14"><a href="#">Waffle House Inc</a></li>
+  
+         </ul>
+</div>
+   
+</div>
+    
+    <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776;Companies</span>
+    
+    
+    
+    
+<div id="container">haha</div>
+
+
+
+    
+    
+    
+    
+    <script>
+
+function myFunction() {
+    document.getElementById("myDropdown").classList.toggle("show");
+}
+
+// Close the dropdown if the user clicks outside of it
+window.onclick = function(event) {
+  if (!event.target.matches('.dropbtn')) {
+
+    var dropdowns = document.getElementsByClassName("dropdown-content");
+    var i;
+    for (i = 0; i < dropdowns.length; i++) {
+      var openDropdown = dropdowns[i];
+      
+    }
+  }
+}
+
+
+
+
+
+
+    
+    <!---Here is the script for sidebar-->
+    
+   
+function openNav() {
+    document.getElementById("mySidenav").style.width = "200px";
+}
+
+function closeNav() {
+    document.getElementById("mySidenav").style.width = "0";
+}
+
+    
+    //Manish, this is the script for scratch accordion
+    
+    
+    
+var acc = document.getElementsByClassName("accordion");
+var i;
+
+for (i = 0; i < acc.length; i++) {
+    acc[i].addEventListener("click", function() {
+        this.classList.toggle("active");
+        var panel = this.nextElementSibling;
+        if (panel.style.display === "block") {
+            panel.style.display = "none";
+        } else {
+            panel.style.display = "block";
+        }
+    });
+}
+   
+        
+        
+        //script for hiding the side navigation bar when clicked on the list
+        
+        
+        $(document).ready(function(){
+     $("li").click(function(){
+     $(".closebtn").trigger("click");
+});
+    $("#container").click(function(){
+     $(".closebtn").trigger("click");
+});         
+    
+});
+        
+   
+        
+         $(document).ready(function(){
+     $("li").click(function(){
+     $(".closebtn").trigger("click");
+});
+    $("#container").click(function(){
+     $(".closebtn").trigger("click");
+});         
+    
+});
+       
+</script>
+    
+    
+    
+    
+    
+</body>
+</html>
+
