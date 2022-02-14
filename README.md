@@ -1,6 +1,4 @@
-# bizconnect.html
-Made custom map from High Charts (Js Library)  to display the position of companies in the career fair (Bizconnect)
+This was the project I did as Student Developer at College of Business at Southeastern Louisiana University. I created this web application that lets career Fair (Bizconnect) attendees find their companies of their choice. It was integrated into the mobile app which was built on Ionic platform. 
 
-
-# trying to push this repository back to remote repository
+The link to mobile application is given here: https://appadvice.com/app/biz-connect/1363168868
 
