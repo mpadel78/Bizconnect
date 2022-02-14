@@ -2,3 +2,6 @@ This was the project I did as Student Developer at College of Business at Southe
 
 The link to mobile application is given here: https://appadvice.com/app/biz-connect/1363168868
 
+
+
+Use this link to find the demo of the application: https://mpadel78.github.io/Bizconnect/
